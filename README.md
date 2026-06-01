@@ -263,13 +263,6 @@ backend/
 │       ├── menu_repository.py
 │       ├── order_repository.py
 │       └── invoice_repository.py
-│
-├── uploads/
-│   └── menu/
-│       ├── nasi-goreng.jpg
-│       ├── mie-goreng.jpg
-│       └── es-teh.jpg
-│
 ├── requirements.txt
 ├── .env.example
 └── README.md

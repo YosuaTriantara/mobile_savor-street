@@ -1,0 +1,41 @@
+{
+  "id_invoice": 1,
+  "id_pemesanan": 1,
+  "table_number": "M01",
+  "status": "requested",
+  "items": [
+    {
+      "id_menu": 1,
+      "nama_menu": "Nasi Goreng Savor",
+      "harga_satuan": 25000,
+      "jumlah": 2,
+      "options": [
+        {
+          "nama_opsi": "Pedas Level 2",
+          "harga_tambahan": 0
+        },
+        {
+          "nama_opsi": "Large",
+          "harga_tambahan": 5000
+        },
+        {
+          "nama_opsi": "Extra Telur",
+          "harga_tambahan": 5000
+        }
+      ],
+      "catatan": "Tidak pakai bawang.",
+      "subtotal": 70000
+    },
+    {
+      "id_menu": 16,
+      "nama_menu": "Iced Tea",
+      "harga_satuan": 10000,
+      "jumlah": 1,
+      "options": [],
+      "catatan": "Es sedikit.",
+      "subtotal": 10000
+    }
+  ],
+  "total_harga": 80000,
+  "payment_method": "Manual ke kasir"
+}

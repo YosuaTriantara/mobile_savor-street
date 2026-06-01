@@ -1,0 +1,47 @@
+[
+  {
+    "id_menu": 1,
+    "nama_menu": "Nasi Goreng Savor",
+    "harga": 25000,
+    "kategori": "Rice",
+    "deskripsi": "Nasi goreng khas Savor Street dengan bumbu gurih dan telur.",
+    "gambar_menu": "/uploads/menu/nasi-goreng-savor.jpg",
+    "status": "available"
+  },
+  {
+    "id_menu": 2,
+    "nama_menu": "Chicken Rice Bowl",
+    "harga": 28000,
+    "kategori": "Rice",
+    "deskripsi": "Nasi dengan ayam saus gurih dan sayuran segar.",
+    "gambar_menu": "/uploads/menu/chicken-rice-bowl.jpg",
+    "status": "available"
+  },
+  {
+    "id_menu": 6,
+    "nama_menu": "Mie Goreng Savor",
+    "harga": 24000,
+    "kategori": "Noodles",
+    "deskripsi": "Mie goreng dengan bumbu khas dan topping ayam.",
+    "gambar_menu": "/uploads/menu/mie-goreng-savor.jpg",
+    "status": "available"
+  },
+  {
+    "id_menu": 11,
+    "nama_menu": "French Fries",
+    "harga": 18000,
+    "kategori": "Side Dish",
+    "deskripsi": "Kentang goreng renyah dengan saus pilihan.",
+    "gambar_menu": "/uploads/menu/french-fries.jpg",
+    "status": "available"
+  },
+  {
+    "id_menu": 16,
+    "nama_menu": "Iced Tea",
+    "harga": 10000,
+    "kategori": "Beverage",
+    "deskripsi": "Teh manis dingin segar.",
+    "gambar_menu": "/uploads/menu/iced-tea.jpg",
+    "status": "available"
+  }
+]

@@ -33,19 +33,15 @@ Gunakan struktur folder berikut:
 ```text
 savor-street/
 └── menu/
-    ├── rice/
-    ├── noodles/
-    ├── side-dish/
-    └── beverage/
 ```
 
 Contoh:
 
 ```text
-savor-street/menu/rice/nasi-goreng.jpg
-savor-street/menu/noodles/mie-goreng.jpg
-savor-street/menu/side-dish/french-fries.jpg
-savor-street/menu/beverage/es-teh-manis.jpg
+/menu/nasi-goreng.png
+/menu/mie-goreng.png
+/menu/french-fries.png
+/menu/es-teh-manis.png
 ```
 
 ---
@@ -55,7 +51,7 @@ savor-street/menu/beverage/es-teh-manis.jpg
 Gunakan format:
 
 ```text
-nama-menu.jpg
+nama-menu.png
 ```
 
 Aturan:
@@ -96,63 +92,9 @@ Menyimpan URL penuh dari ImageKit.
 Contoh:
 
 ```text
-https://ik.imagekit.io/savorstreet/menu/rice/nasi-goreng.jpg
+menu/rice/nasi-goreng.png
 ```
 
-Jangan menyimpan:
-
-```text
-nasi-goreng.jpg
-/menu/rice/nasi-goreng.jpg
-```
-
-Database harus selalu menyimpan URL lengkap yang dapat langsung digunakan oleh aplikasi mobile.
-
----
-
-# Standar Format Gambar
-
-Format yang diperbolehkan:
-
-```text
-jpg
-jpeg
-png
-webp
-```
-
-Rekomendasi:
-
-```text
-webp
-```
-
-karena ukuran file lebih kecil.
-
----
-
-# Ukuran Gambar
-
-Rekomendasi:
-
-```text
-Aspect Ratio : 1 : 1
-Resolution   : 800 x 800 px
-```
-
-Minimal:
-
-```text
-600 x 600 px
-```
-
-Maksimal:
-
-```text
-1200 x 1200 px
-```
-
----
 
 # Penggunaan pada Backend
 
@@ -165,7 +107,7 @@ Contoh response API:
   "id_menu": 1,
   "nama_menu": "Nasi Goreng",
   "harga": 25000,
-  "gambar_menu": "https://ik.imagekit.io/savorstreet/menu/rice/nasi-goreng.jpg"
+  "gambar_menu": "menu/rice/nasi-goreng.jpg"
 }
 ```
 
@@ -219,6 +161,5 @@ Contoh:
 }
 ```
 
-Setelah integrasi API selesai, seluruh gambar harus menggunakan URL dari ImageKit.
 
 ---

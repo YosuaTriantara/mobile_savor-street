@@ -4,3 +4,4 @@ database/
 __pycache__
 
 
+.claude/scheduled_tasks.lock

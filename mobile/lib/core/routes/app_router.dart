@@ -5,7 +5,9 @@ import 'package:go_router/go_router.dart';
 import '../../features/cart/presentation/screens/cart_screen.dart';
 import '../../features/invoice/presentation/screens/invoice_screen.dart';
 import '../../features/order/presentation/screens/order_success_screen.dart';
+import '../../features/qr/presentation/screens/qr_scan_screen.dart';
 import '../constants/app_routes.dart';
+import '../session/table_session.dart';
 
 /// Router utama aplikasi. Setiap anggota yang menyelesaikan screen fitur
 /// (qr, menu, customization) tinggal ganti _ComingSoonScreen di bawah
@@ -14,12 +16,19 @@ final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     initialLocation: AppRoutes.qrScan,
     debugLogDiagnostics: true,
+    // Guard: seluruh halaman selain QR scan butuh table session hasil scan.
+    // Tanpa ini, order bisa terkirim tanpa meja yang valid.
+    redirect: (context, state) {
+      final hasSession = ref.read(tableSessionStateProvider) != null;
+      final isQrScanRoute = state.matchedLocation == AppRoutes.qrScan;
+      if (!hasSession && !isQrScanRoute) return AppRoutes.qrScan;
+      return null;
+    },
     routes: [
       GoRoute(
         path: AppRoutes.qrScan,
         name: AppRoutes.qrScanName,
-        builder: (context, state) =>
-            const _ComingSoonScreen(title: 'QR Scan'),
+        builder: (context, state) => const QrScanScreen(),
       ),
       GoRoute(
         path: AppRoutes.menu,

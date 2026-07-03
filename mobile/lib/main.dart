@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'core/theme/app_colors.dart';
-import 'features/cart/cart.dart';
+import 'core/routes/app_router.dart';
+import 'core/theme/app_theme.dart';
+
+import 'features/cart/domain/entities/menu_entity.dart';
+import 'features/cart/domain/entities/opsi_entity.dart';
+import 'features/cart/presentation/providers/cart_provider.dart';
+import 'features/cart/presentation/screens/cart_screen.dart';
 
 void main() {
   runApp(const ProviderScope(child: SavorStreetApp()));
@@ -13,18 +18,13 @@ class SavorStreetApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
+    final router = ref.watch(appRouterProvider);
+
+    return MaterialApp.router(
       title: 'Savor Street',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        scaffoldBackgroundColor: AppColors.creamBackground,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.primaryGreen,
-          primary: AppColors.primaryGreen,
-        ),
-      ),
-      home: const _CartPreviewSeeder(),
+      theme: AppTheme.light,
+      routerConfig: router,
     );
   }
 }

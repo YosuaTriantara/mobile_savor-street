@@ -8,6 +8,7 @@ import '../../features/order/presentation/screens/order_success_screen.dart';
 import '../../features/qr/presentation/screens/qr_scan_screen.dart';
 import '../constants/app_routes.dart';
 import '../session/table_session.dart';
+import '../../features/menu/presentation/screens/menu_list_page.dart';
 
 /// Router utama aplikasi. Setiap anggota yang menyelesaikan screen fitur
 /// (qr, menu, customization) tinggal ganti _ComingSoonScreen di bawah
@@ -33,7 +34,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.menu,
         name: AppRoutes.menuName,
-        builder: (context, state) => const _ComingSoonScreen(title: 'Menu'),
+        builder: (context, state) => const MenuListPage(),
       ),
       GoRoute(
         path: AppRoutes.menuDetail,

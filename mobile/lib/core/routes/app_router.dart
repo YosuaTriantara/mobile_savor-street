@@ -3,12 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/cart/presentation/screens/cart_screen.dart';
+import '../../features/customization/presentation/screens/customization_page.dart';
 import '../../features/invoice/presentation/screens/invoice_screen.dart';
+import '../../features/menu/presentation/screens/menu_detail_page.dart';
+import '../../features/menu/presentation/screens/menu_list_page.dart';
 import '../../features/order/presentation/screens/order_success_screen.dart';
 import '../../features/qr/presentation/screens/qr_scan_screen.dart';
 import '../constants/app_routes.dart';
 import '../session/table_session.dart';
-import '../../features/menu/presentation/screens/menu_list_page.dart';
 
 /// Router utama aplikasi. Setiap anggota yang menyelesaikan screen fitur
 /// (qr, menu, customization) tinggal ganti _ComingSoonScreen di bawah
@@ -39,14 +41,18 @@ final appRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.menuDetail,
         name: AppRoutes.menuDetailName,
-        builder: (context, state) =>
-            const _ComingSoonScreen(title: 'Menu Detail'),
+        builder: (context, state) {
+          final idMenu = int.parse(state.pathParameters['idMenu']!);
+          return MenuDetailPage(idMenu: idMenu);
+        },
       ),
       GoRoute(
         path: AppRoutes.customization,
         name: AppRoutes.customizationName,
-        builder: (context, state) =>
-            const _ComingSoonScreen(title: 'Customization'),
+        builder: (context, state) {
+          final idMenu = int.parse(state.pathParameters['idMenu']!);
+          return CustomizationPage(idMenu: idMenu);
+        },
       ),
       GoRoute(
         path: AppRoutes.cart,
@@ -73,16 +79,3 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     ),
   );
 });
-
-class _ComingSoonScreen extends StatelessWidget {
-  final String title;
-  const _ComingSoonScreen({required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(child: Text('$title — belum dikerjakan')),
-    );
-  }
-}

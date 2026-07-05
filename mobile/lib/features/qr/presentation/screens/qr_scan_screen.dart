@@ -24,6 +24,7 @@ class QrScanScreen extends ConsumerStatefulWidget {
 class _QrScanScreenState extends ConsumerState<QrScanScreen> {
   final MobileScannerController _controller = MobileScannerController(
     formats: const [BarcodeFormat.qrCode],
+    facing: CameraFacing.front,
   );
 
   bool _isHandling = false;

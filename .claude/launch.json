@@ -6,6 +6,12 @@
       "runtimeExecutable": "sh",
       "runtimeArgs": ["-c", "cd mobile && flutter run -d web-server --web-port 8765"],
       "port": 8765
+    },
+    {
+      "name": "human-segmentation-app",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd /Users/tangkaswedana/Documents/Informatika/human_segmentation_deeplabv3plus_k3 && python3 -m streamlit run _preview_app.py --server.port 8502 --server.headless true"],
+      "port": 8502
     }
   ]
 }
